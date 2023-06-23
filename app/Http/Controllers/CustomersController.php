@@ -12,7 +12,7 @@ class CustomersController extends Controller
      */
     public function index()
     {
-        //$customers = Customers::all();, compact('customers')
+
         return view('customers.index', ['custom' => Customers::all()]);
     }
 
@@ -21,15 +21,31 @@ class CustomersController extends Controller
      */
     public function create()
     {
-        //
+        return view('customers.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Customers $custom ,Request $request)
     {
-        //
+        $custom->name = $request->name;
+        $custom->lastName = $request->lastname;
+        $custom->phone = $request->phone;
+        $custom->address = $request->address;
+        $custom->birth_date = $request->birth_date;
+
+        $custom->save();
+
+        //$custom->create([
+            //$custom->name => $request->name,
+            //$custom->lastName => $request->lastname,
+            //$custom->phone => $request->phone,
+            //$custom->address => $request->address,
+            //$custom->birth_date => $request->birth_date
+        //]);
+
+        return redirect()->route('customers.index');
     }
 
     /**

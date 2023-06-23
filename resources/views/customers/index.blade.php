@@ -6,6 +6,10 @@
             <div class="col-md-8">
                 <div class="card">
 
+                    <div class="justify-content-right">
+                            <a class="btn btn-outline-secondary" href="{{ route('customers.create') }}"> Crear proveedor</a>
+                    </div>
+
                     <div class="row">
                         <div class="table-responsive">
                             <table class="table table-primary">
@@ -24,7 +28,7 @@
 
                                     <tr class="">
                                         <td scope="row">{{ $customers->name }}</td>
-                                        <td scope="row">{{ $customers->lastName }}</td>
+                                        <td scope="row">{{ $customers->lastname }}</td>
                                         <td scope="row">{{ $customers->address }}</td>
                                         <td scope="row">{{ $customers->phone }}</td>
                                         <td scope="row">{{ $customers->birth_date }}</td>
@@ -37,7 +41,7 @@
 
                     </div>
 
-
+@yield('content2')
 
                 </div>
             </div>
