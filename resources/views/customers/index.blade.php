@@ -11,22 +11,26 @@
                             <table class="table table-primary">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Column 1</th>
-                                        <th scope="col">Column 2</th>
-                                        <th scope="col">Column 3</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Apellido</th>
+                                        <th scope="col">Dirección</th>
+                                        <th scope="col">Telefono</th>
+                                        <th scope="col">Fecha de Nascimiento</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($custom as $customers)
+
+
                                     <tr class="">
-                                        <td scope="row">R1C1</td>
-                                        <td>R1C2</td>
-                                        <td>R1C3</td>
+                                        <td scope="row">{{ $customers->name }}</td>
+                                        <td scope="row">{{ $customers->lastName }}</td>
+                                        <td scope="row">{{ $customers->address }}</td>
+                                        <td scope="row">{{ $customers->phone }}</td>
+                                        <td scope="row">{{ $customers->birth_date }}</td>
+
                                     </tr>
-                                    <tr class="">
-                                        <td scope="row">Item</td>
-                                        <td>Item</td>
-                                        <td>Item</td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -39,5 +43,5 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 @endsection

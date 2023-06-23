@@ -13,7 +13,7 @@ class CustomersController extends Controller
     public function index()
     {
         //$customers = Customers::all();, compact('customers')
-        return view('customers.index');
+        return view('customers.index', ['custom' => Customers::all()]);
     }
 
     /**
