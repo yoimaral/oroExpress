@@ -32,7 +32,14 @@
                                         <td scope="row">{{ $customers->address }}</td>
                                         <td scope="row">{{ $customers->phone }}</td>
                                         <td scope="row">{{ $customers->birth_date }}</td>
+<td class="text-center">
+    <form action="{{ route('customers.destroy', $customers) }}"></form>
 
+    @csrf
+    @method('DELETE')
+
+    <button type="submit" class="btn btn-outline-danger">Eliminar</button>
+</td>
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -40,8 +47,6 @@
                         </div>
 
                     </div>
-
-@yield('content2')
 
                 </div>
             </div>

@@ -77,6 +77,8 @@ class CustomersController extends Controller
      */
     public function destroy(customers $customers)
     {
-        //
+        $customers->delete();
+
+        return redirect()->route('customers.index');
     }
 }
