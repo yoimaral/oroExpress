@@ -16,6 +16,7 @@ return new class extends Migration
             $table->BigInteger('total');
             $table->String('status');
             $table->date('date_delivery');
+            $table->unsignedBigInteger('customers_id');
             $table->timestamps();
         });
     }

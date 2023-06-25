@@ -26,13 +26,13 @@ class OrderDetailsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(OrderDetails $OrderDetails, Request $request)
+    public function store(OrderDetails $orderDetail, Request $request)
     {
-        $OrderDetails->description = $request->description;
-        $OrderDetails->order_id = $request->order_id;
-        $OrderDetails->product_id = $request->product_id;
+        $orderDetail->description = $request->description;
+        $orderDetail->order_id = $request->order_id;
+        $orderDetail->product_id = $request->product_id;
 
-        $OrderDetails->save();
+        $orderDetail->save();
 
         return redirect()->route('orderdetails.index');
     }
