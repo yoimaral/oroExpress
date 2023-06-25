@@ -40,6 +40,13 @@
 
                         </div>
 
+                        <div class="mb-3">
+                            <label for="" class="form-label">ID ciudad </label>
+                            <input type="number" name="city_id" id="city_id" class="form-control" placeholder=""
+                                aria-describedby="helpId" required>
+
+                        </div>
+
                     </div>
 
                     <div class="justify-content-right">

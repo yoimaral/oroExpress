@@ -20,6 +20,7 @@
                                         <th scope="col">Dirección</th>
                                         <th scope="col">Telefono</th>
                                         <th scope="col">Fecha de Nascimiento</th>
+                                        <th scope="col">ID ciudad</th>
                                         <th scope="col">Eliminar</th>
                                         <th scope="col">Actualizar</th>
                                     </tr>
@@ -32,6 +33,8 @@
                                             <td scope="row">{{ $customers->address }}</td>
                                             <td scope="row">{{ $customers->phone }}</td>
                                             <td scope="row">{{ $customers->birth_date }}</td>
+                                            <td scope="row">{{ $customers->city_id }}</td>
+
                                             <td class="text-center">
                                                 <form method="POST" action="{{ route('customers.destroy', $customers) }}">
 

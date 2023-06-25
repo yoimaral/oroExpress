@@ -12,7 +12,7 @@ class CitiesController extends Controller
      */
     public function index()
     {
-        return view('Cities.index', ['city' => Cities::all()]);
+        return view('cities.index', ['cities' => Cities::all()]);
     }
 
     /**
@@ -20,7 +20,7 @@ class CitiesController extends Controller
      */
     public function create()
     {
-        return view('Cities.create');
+        return view('cities.create');
     }
 
     /**
@@ -28,6 +28,8 @@ class CitiesController extends Controller
      */
     public function store(Cities $cities, Request $request)
     {
+        //$cities->city_id = $request->city_id;
+        $cities->department = $request->department;
         $cities->cities = $request->cities;
         $cities->description = $request->description;
 
@@ -49,7 +51,7 @@ class CitiesController extends Controller
      */
     public function edit(Cities $city)
     {
-        return view('Cities.edit', compact('city'));
+        return view('cities.edit', compact('city'));
     }
 
     /**
@@ -58,6 +60,8 @@ class CitiesController extends Controller
     public function update(Request $request, Cities $city)
     {
         $city->update([
+            //'city_id' => $request->city_id,
+            'department' => $request->department,
             'cities' => $request->cities,
             'description' => $request->description
 

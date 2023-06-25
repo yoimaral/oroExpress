@@ -34,6 +34,7 @@ class CustomersController extends Controller
         $custom->phone = $request->phone;
         $custom->address = $request->address;
         $custom->birth_date = $request->birth_date;
+        $custom->city_id = $request->city_id;
 
         $custom->save();
 
@@ -67,7 +68,8 @@ class CustomersController extends Controller
             'lastname' => $request->lastname,
             'phone' => $request->phone,
             'address' => $request->address,
-            'birth_date' => $request->birth_date
+            'birth_date' => $request->birth_date,
+            'city_id'=> $request->city_id
         ]);
 
         return redirect()->route('customers.index');

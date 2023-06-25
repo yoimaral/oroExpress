@@ -12,6 +12,7 @@ class Order extends Model
     protected $fillable = [
         'total',
         'status',
-        'date_delivery'
+        'date_delivery',
+        'customers_id'
     ];
 }

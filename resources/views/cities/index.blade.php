@@ -7,7 +7,7 @@
                 <div class="card">
 
                     <div class="justify-content-right">
-                        <a class="btn btn-outline-secondary" href="{{ route('order.create') }}"> Crear proveedor</a>
+                        <a class="btn btn-outline-secondary" href="{{ route('cities.create') }}"> Crear proveedor</a>
                     </div>
 
                     <div class="row">
@@ -15,25 +15,22 @@
                             <table class="table table-primary">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Total</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">fecha entrega</th>
-                                        <th scope="col">ID del proveedor</th>
-                                        <th scope="col">Fecha creación</th>
+                                        <th scope="col">Departamento</th>
+                                        <th scope="col">Ciudad</th>
+                                        <th scope="col">Descripción</th>
                                         <th scope="col">Eliminar</th>
                                         <th scope="col">Actualizar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($order as $orders)
+                                    @foreach ($cities as $city)
                                         <tr class="">
-                                            <td scope="row">{{ $orders->total }}</td>
-                                            <td scope="row">{{ $orders->status }}</td>
-                                            <td scope="row">{{ $orders->created_at }}</td>
-                                            <td scope="row">{{ $orders->customers_id }}</td>
-                                            <td scope="row">{{ $orders->date_delivery }}</td>
+                                            <td scope="row">{{ $city->department }}</td>
+                                            <td scope="row">{{ $city->cities }}</td>
+                                            <td scope="row">{{ $city->description }}</td>
+
                                             <td class="text-center">
-                                                <form method="POST" action="{{ route('order.destroy', $orders) }}">
+                                                <form method="POST" action="{{ route('cities.destroy', $city) }}">
 
                                                     @csrf
                                                     @method('DELETE')
@@ -44,7 +41,7 @@
 
                                             <td class="text-center">
                                                 <a class="btn btn-outline-primary"
-                                                    href="{{ route('order.edit', $orders) }}">Actualizar</a>
+                                                    href="{{ route('cities.edit', $city) }}">Actualizar</a>
                                             </td>
                                         </tr>
                                     @endforeach

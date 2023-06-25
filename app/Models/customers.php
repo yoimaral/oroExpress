@@ -14,6 +14,7 @@ class customers extends Model
             'lastname',
             'phone',
             'address',
-            'birth_date'
+            'birth_date',
+            'city_id'
     ];
 }

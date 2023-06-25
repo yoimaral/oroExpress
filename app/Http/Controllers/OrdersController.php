@@ -28,7 +28,7 @@ class OrdersController extends Controller
      */
     public function store(Order $order ,Request $request)
     {
-        $order->order_id= $request->order_id;
+        $order->customers_id= $request->customers_id;
         $order->total = $request->total;
         $order->status = $request->status;
         $order->date_delivery = $request->date_delivery;
