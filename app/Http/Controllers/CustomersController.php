@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\customers;
+use App\Models\Cities;
 use Illuminate\Http\Request;
 
 class CustomersController extends Controller
@@ -21,7 +22,10 @@ class CustomersController extends Controller
      */
     public function create()
     {
-        return view('customers.create');
+        $cities = Cities::all();
+        $citie = array("ciudades" => $cities);
+
+        return view('customers.create', $citie );
     }
 
     /**
@@ -34,7 +38,7 @@ class CustomersController extends Controller
         $custom->phone = $request->phone;
         $custom->address = $request->address;
         $custom->birth_date = $request->birth_date;
-        $custom->city_id = $request->city_id;
+        $custom->city_id = $request->input("city_id");
 
         $custom->save();
 
@@ -69,7 +73,7 @@ class CustomersController extends Controller
             'phone' => $request->phone,
             'address' => $request->address,
             'birth_date' => $request->birth_date,
-            'city_id'=> $request->city_id
+            'city_id' => $request->city_id
         ]);
 
         return redirect()->route('customers.index');

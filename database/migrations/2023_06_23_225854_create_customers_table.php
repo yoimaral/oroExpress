@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('address');
             $table->date('birth_date');
             $table->bigInteger('city_id');
+            ///$table->foreign('city_id')->references('id')->on('cities');
             $table->timestamps();
         });
     }

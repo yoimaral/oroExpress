@@ -26,9 +26,9 @@ class OrdersController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Order $order ,Request $request)
+    public function store(Order $order, Request $request)
     {
-        $order->customers_id= $request->customers_id;
+        $order->customers_id = $request->customers_id;
         $order->total = $request->total;
         $order->status = $request->status;
         $order->date_delivery = $request->date_delivery;
@@ -36,7 +36,6 @@ class OrdersController extends Controller
         $order->save();
 
         return redirect()->route('order.index');
-
     }
 
     /**
