@@ -27,7 +27,7 @@ class CustomersController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Customers $custom ,Request $request)
+    public function store(Customers $custom, Request $request)
     {
         $custom->name = $request->name;
         $custom->lastName = $request->lastname;
@@ -37,13 +37,6 @@ class CustomersController extends Controller
 
         $custom->save();
 
-        //$custom->create([
-            //$custom->name => $request->name,
-            //$custom->lastName => $request->lastname,
-            //$custom->phone => $request->phone,
-            //$custom->address => $request->address,
-            //$custom->birth_date => $request->birth_date
-        //]);
 
         return redirect()->route('customers.index');
     }
@@ -59,25 +52,33 @@ class CustomersController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(customers $customers)
+    public function edit(Customers $customer)
     {
-        //
+        return view('customers.edit', compact('customer'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, customers $customers)
+    public function update(Request $request, Customers $customer)
     {
-        //
+        $customer->update([
+            'name' => $request->name,
+            'lastname' => $request->lastname,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'birth_date' => $request->birth_date
+        ]);
+
+        return redirect()->route('customers.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(customers $customers)
+    public function destroy(Customers $customer)
     {
-        $customers->delete();
+        $customer->delete();
 
         return redirect()->route('customers.index');
     }

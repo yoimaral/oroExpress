@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomersController;
+use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\OrderDetailsController;
+use App\Http\Controllers\CitiesController;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +27,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('customers', CustomersController::class);
+Route::resource('order', OrdersController::class);
+Route::resource('orderdetails', OrderDetailsController::class);
+Route::resource('cities', CitiesController::class);
+Route::resource('products', ProductsController::class);
